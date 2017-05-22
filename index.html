@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <!-- Vue.js tutorial from coligo.io -->
+  <title>TameRocket</title>
+
+
+</head>
+
+<body>
+  <div id="vue-instance">
+    <!-- This is the DOM element to which the Vue instance is mounted-->
+    Enter a greeting: <input type="text" v-model="name">
+    <button v-on:click="sayHello">Hey There!</button>
+  </div>
+
+
+  <!-- CDN to import vue for now-->
+  <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  <script>
+    // the VueJS instance which is bound to the div with the id vue-instance
+    var vm = new Vue({
+      el: '#vue-instance',
+      data: {
+        name: ''
+      },
+      
+    });
+
+  </script>  
+</body>
+
+</html>
