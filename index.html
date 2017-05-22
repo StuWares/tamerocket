@@ -11,7 +11,7 @@
 <body>
   <div id="vue-instance">
     <!-- This is the DOM element to which the Vue instance is mounted-->
-    Enter a greeting: <input type="text" v-model="name">
+    Enter your name: <input type="text" v-model="name">
     <button v-on:click="sayHello">Hey There!</button>
   </div>
 
@@ -26,7 +26,11 @@
       data: {
         name: ''
       },
-      
+      methods: {
+        sayHello: function(){
+          alert('Hey there ' + this.name);
+        }
+      }
     });
 
   </script>  
