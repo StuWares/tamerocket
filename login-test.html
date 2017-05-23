@@ -3,15 +3,19 @@
 <html>
 <head>
   <!-- Vue.js tutorial from coligo.io -->
-  <title>TameRocket</title>
+  <title>Login-TameRocket</title>
 
 
 </head>
 
 <body>
+    <!-- the vue-instance div declares the entire area for Vue -->
   <div id="vue-instance">
+      <!-- could substitute v-if for v-show, page would render slower
+      but toggles would render quicker-->
     <div v-if="isLoggedIn">
         Welcome to Tame Rocket!
+        <!-- the @ is shorthand for v-on -->
         <button @click="login" type="submit">Logout</button>
     </div>
   <div v-else>
@@ -24,6 +28,7 @@
 <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
 
 <script>
+    // constructor for the Vue instance
   var vm = new Vue({
       el: '#vue-instance',
       data: {
@@ -35,8 +40,6 @@
               this.isLoggedIn = !this.isLoggedIn;
           }
       }
-
-
   });
 
 </script>

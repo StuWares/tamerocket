@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <!-- Vue.js tutorial from coligo.io -->
+  <title>Lists-TameRocket</title>
+
+
+</head>
+
+<body>
+    <div id="vue-instance">
+        <ul>
+            <!-- "item in inventory" allows for rendering the contents of an array,
+            iterating though for every item-->
+            <li v-for="item in inventory">
+                {{ item.name }} - &pound;{{ item.price }}
+            </li>
+        </ul>
+    </div>
+
+  <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  <script>
+      var vm = new Vue({
+          el: "#vue-instance",
+          data:{
+              // wouldn't usually hard code the data in the array
+              // would ordinarily be pulled in from a database or an API
+              inventory: [
+                  {name: 'MacBook Air', price: 1000 },
+                  {name: 'MacBook Pro', price: 1800 },
+                  {name: 'Lenovo W530', price: 1400 },
+                  {name: 'Acer Aspire One', price: 300 }
+              ]
+          }
+
+      });
+
+  </script>
+
+</body>
