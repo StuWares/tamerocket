@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <!-- Vue.js tutorial from coligo.io -->
+  <title>TameRocket</title>
+
+
+</head>
+
+<body>
+  <div id="vue-instance">
+    <div v-if="isLoggedIn">
+        Welcome to Tame Rocket!
+        <button @click="login" type="submit">Logout</button>
+    </div>
+  <div v-else>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button @click="login" type="submit">Login</button>
+  </div>
+</div>
+
+<script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+<script>
+  var vm = new Vue({
+      el: '#vue-instance',
+      data: {
+          isLoggedIn: false
+      },
+      methods:{
+          login: function(){
+              // 'this' refers to the vm instance
+              this.isLoggedIn = !this.isLoggedIn;
+          }
+      }
+
+
+  });
+
+</script>
+
+
+</body>
